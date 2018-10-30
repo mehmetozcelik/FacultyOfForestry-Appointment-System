@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Uyelik";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div>
+    <section class="about-area" style="background-color: #EEE8E8;padding: 20px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <div class="about-title">
+                        <h2>Yeni Üyelik</h2>
+                        <p>Yeni Üyelik oluşturduktan sonra randevu alabilirsiniz.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <form method="post" action="/Uye/Uyelik">
+                        <div class="mt-10">
+                            <input type="text" name="kurumAdi" placeholder="Kurum Adınızı Giriniz..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Kurum Adınızı Boş Geçemezsiniz.'" required="true" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                            <input type="text" name="adi" placeholder="Adınızı Girinizi..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adınızı Boş Geçemezsiniz.'" required="" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                            <input type="text" name="soyadi" placeholder="Soyadı Girinizi..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Soyadınızı Boş Geçemezsiniz.'" required="" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                            <input type="number" name="tc" placeholder="T.C. Kimlik Numaranızı Girinizi..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'T.C. Kimlik Numaranızı Boş Geçemezsiniz.'" required="" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                            @*<div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>*@
+                            <input type="text" name="mail" placeholder="E-Posta Adresinizi Girinizi..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-Posta Adresninizi Boş Geçemezsiniz.'" required="" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                            <input type="tel" name="tel" placeholder="Telefon Numaranızı Girinizi..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Telefon Numaranızı Boş Geçemezsiniz.'" required="" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                            <input type="password" name="sifre" placeholder="Parolanızı Girinizi..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Parolanızı Boş Geçemezsiniz.'" required="" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                            <button style="float: right;" type="submit" class="genric-btn success circle arrow">Kaydet<span class="lnr lnr-arrow-right"></span></button>
+                        </div>
+
+                    </form>
+
+                    @if (ViewBag.qUserHata != null)
+                    {
+                        <div class="alert-danger">
+                            <p style="margin-left:5px;"> @ViewBag.qUserHata </p>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+

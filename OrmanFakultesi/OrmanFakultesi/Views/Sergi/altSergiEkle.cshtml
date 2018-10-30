@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "altSergiEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section scripts{
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+}
+
+@using OrmanFakultesi.Models
+
+@model SelectList
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Alt Sergi Ekle
+            </header>
+            <div class="panel-body">
+                <form role="form" method="post" action="/Sergi/altSergiEkle">
+                    <div class="form-group">
+                        <label>Ana Sergi Seçiniz</label>
+                        @Html.DropDownList("sergiID", Model, "Seçiniz", new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Sergi Adı</label>
+                        <input name="adi" type="text" class="form-control" placeholder="Sergi adını Giriniz...">
+                    </div>
+                    <div class="form-group">
+                        <label>Yapıldığı Bölüm Seçiniz</label>
+                        @Html.DropDownList("bolumID", (SelectList)ViewBag.bolumler, "Seçiniz", new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Sergi Sorumlularını Seçiniz</label>
+                        @Html.DropDownList("sorumluID", (MultiSelectList)ViewBag.sorumlu, new { @class = "selectpicker form-control", multiple = "multiple",size=5, @data_live_search = "true" })
+                    </div>
+                   <div class="form-group">
+                        <label>Sergilendiği Yer</label>
+                        <input name="sergilendigiYer" type="text" class="form-control" placeholder="Sergilendiği yeri giriniz...">
+                    </div>
+                    <div class="form-group">
+                        <label>Sergi Firması</label>
+                        <input name="sergiFirma" type="text" class="form-control" placeholder="Sergilendiği yeri giriniz...">
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        <input name="sergiAciklama" type="text" class="form-control" placeholder="Sergilendiği yeri giriniz...">
+                    </div>
+                    <div class="form-group">
+                        <label>Sergi</label>
+                        <input name="sergiAciklama" type="text" class="form-control" placeholder="Sergilendiği yeri giriniz...">
+                    </div>
+                    @*<div class="form-group">
+            <label>Sergi Sorumlusu Seçin</label>
+        <select name="sorumlular" class="selectpicker form-control" multiple data-live-search="true">
+                <option id="1" >Mustard</option>
+                <option id="2">Ketchup</option>
+                <option id="3">Relish</option>
+                <option id="4">Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+            </select>
+        </div>*@
+                    <button type="submit" class="btn btn-info">Kaydet</button>
+                </form>
+
+
+
+            </div>
+        </section>
+    </div>
+
+</div>
+<script>$('select').selectpicker();</script>
+<script type="text/javascript">
+    function validateFileType() {
+        var fileName = document.getElementById("fileName").value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+            //TO DO
+        } else {
+            alert("Yalnızca jpg , jpeg Veya png uzantılı dosyaları seiçiniz.");
+        }
+    }
+</script>

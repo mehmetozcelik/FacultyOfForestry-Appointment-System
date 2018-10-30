@@ -1,0 +1,239 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="/Content/Admin/img/favicon.png">
+
+    <title>Düzce Üniversitesi Orman Fakültesi Ziyaretçi randevı Sistemi</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/Content/Admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/Admin/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/Content/Admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/Content/Admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/Content/Admin/css/owl.carousel.css" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="/Content/Admin/css/style.css" rel="stylesheet">
+    <link href="/Content/Admin/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/Content/Admin/js/html5shiv.js"></script>
+      <script src="/Content/Admin/js/respond.min.js"></script>
+    <![endif]-->
+
+    @RenderSection("scripts", false)
+</head>
+
+<body>
+
+    <section id="container">
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="/Content/Admin/index.html" class="logo">Orman<span> Fakültesi</span></a>
+            <!--logo end-->
+
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="/Content/Admin/#">
+                            <img alt="" src="/Content/Admin/img/avatar1_small.jpg">
+                            <span class="username">Giren Kişi</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+
+                            <li><a href="/Content/Admin/login.html"><i class="icon-key"></i> Çıkış Yap</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a class="active" href="/Admin/Index/">
+                            <i class="icon-dashboard"></i>
+                            <span>Anasayfa</span>
+                        </a>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="/Content/Admin/javascript:;">
+                            <i class="icon-user"></i>
+                            <span>Kullanıcı İşlemleri</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/Kullanici/Index">Kullanıcı Listesi</a></li>
+                            <li><a href="/Kullanici/KullaniciEkle">Kullanıcı Ekle</a></li>
+                            <li><a href="/Kullanici/YetkiListesi">Yetki Listesi</a></li>
+                            <li><a href="/Kullanici/YetkiEkle">Yetki Ekle</a></li>
+                            <li><a href="/Kullanici/SergiSorumlusuListesi">Sergi Sorumlusu Listesi</a></li>
+                            <li><a href="/Kullanici/sorumluEkle">Sergi Sorumlusu Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/Content/Admin/javascript:;">
+                            <i class="icon-laptop"></i>
+                            <span>Üye İşlemleri</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/Kullanici/uyeListesi">Üye Listesi</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/Content/Admin/javascript:;">
+                            <i class="icon-tasks"></i>
+                            <span>Sergi İşemleri</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/Sergi/Listesi">Sergi Listesi</a></li>
+                            <li><a href="/Sergi/Ekle">Sergi Ekle</a></li>
+                            <li><a href="/Content/Admin/widget.html">Alt Sergi Listesi</a></li>
+                            <li><a href="/Content/Admin/slider.html">Alt Sergi Ekle</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sub-menu">
+                        <a href="/Content/Admin/javascript:;">
+                            <i class="icon-suitcase"></i>
+                            <span>Randevu İşlemleri</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/Content/Admin/form_component.html">Gelen Randevular</a></li>
+                            <li><a href="/Content/Admin/advanced_form_components.html">Onaylı Randevular</a></li>
+                            <li><a href="/Content/Admin/form_wizard.html">Reddedilen Randevular</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/Content/Admin/javascript:;">
+                            <i class="icon-mail-forward (alias)"></i>
+                            <span>Mail İşlemleri</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/Content/Admin/basic_table.html">Çıkan Mailler</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="/Content/Admin/javascript:;">
+                            <i class="icon-trello"></i>
+                            <span>Tanımlar</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/Admin/bolumTanimi">Bölüm Tanımı</a></li>
+                            <li><a href="/Content/Admin/morris.html">Ziyaret Kapsamı Tanımı</a></li>
+                            <li><a href="/Content/Admin/morris.html">Yaş Grubu Tanımı</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/Admin/Ayarlar">
+                            <i class="icon-cogs"></i>
+                            <span>Ayarlar</span>
+                        </a>
+                    </li>
+
+
+
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+
+                @RenderBody()
+
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2013 &copy; FlatLab by VectorLab.
+                <a href="/Content/Admin/#" class="go-top">
+                    <i class="icon-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/Content/Admin/js/jquery.js"></script>
+    <script src="/Content/Admin/js/jquery-1.8.3.min.js"></script>
+    <script src="/Content/Admin/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="/Content/Admin/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/Content/Admin/js/jquery.scrollTo.min.js"></script>
+    <script src="/Content/Admin/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="/Content/Admin/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="/Content/Admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="/Content/Admin/js/owl.carousel.js"></script>
+    <script src="/Content/Admin/js/jquery.customSelect.min.js"></script>
+    <script src="/Content/Admin/js/respond.min.js"></script>
+
+    <script class="include" type="text/javascript" src="/Content/Admin/js/jquery.dcjqaccordion.2.7.js"></script>
+
+    <!--common script for all pages-->
+    <script src="/Content/Admin/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    <script src="/Content/Admin/js/sparkline-chart.js"></script>
+    <script src="/Content/Admin/js/easy-pie-chart.js"></script>
+    <script src="/Content/Admin/js/count.js"></script>
+
+    <script>
+
+      //owl carousel
+
+      $(document).ready(function() {
+          $("#owl-demo").owlCarousel({
+              navigation : true,
+              slideSpeed : 300,
+              paginationSpeed : 400,
+              singleItem : true,
+			  autoPlay:true,
+          });
+      });
+
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+    </script>
+
+</body>
+</html>
+

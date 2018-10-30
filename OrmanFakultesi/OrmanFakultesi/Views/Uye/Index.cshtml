@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div>
+    <section class="about-area" style="background-color: #EEE8E8;padding: 20px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div style="margin-bottom:5px;" class="about-title">
+                        <h2>Üye Giriş</h2>
+                        <p>Şifrenizi hatırlamıyorsanız buraya tıklayabilirsiniz.</p>
+
+                    </div>
+                    <form method="post" action="/Uye/UyeGiris">
+                        <div class="mt-10">
+                            <input type="text" name="mail" placeholder="E-Posta Adresinizi Giriniz..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-Posta Adresinizi Boş Geçemezsiniz.'" required="" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                            <input type="password" name="sifre" placeholder="Parolanızı Girinizi..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Parolanızı Boş Geçemezsiniz.'" required="" class="single-input-accent">
+                        </div>
+                        <div class="mt-10">
+                                <button style="float:right" type="submit" class="genric-btn success circle arrow">Giriş Yap <span class="lnr lnr-arrow-right"></span></button>
+                        </div>
+                    </form>
+                    @if (TempData["UyeGirisHata"]!=null)
+                    {
+                        <div class="alert-danger">
+                            <p style="margin-left:5px;"> @TempData["UyeGirisHata"] </p>
+                        </div>
+
+                    }
+                </div>
+                <div class="col-lg-4">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+

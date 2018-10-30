@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "UyeBilgiler";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+@using OrmanFakultesi.Models
+
+@{
+    Uye u = (Uye)Session["Kullanici"];
+}
+
+@using OrmanFakultesi.Models
+@model List<Uye>
+
+<div>
+    <section class="about-area" style="background-color: #EEE8E8;padding: 20px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <div class="about-title">
+                        <h4><a href="#">Randevularım</a></h4>
+                        <h4><a href="#">Üyelik Bilgilerim</a></h4>
+                        <h4><a href="#">Randevu Al</a></h4>
+                        <h4><a href="#">Çıkış Yap</a></h4>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="section-top-border" style="padding:0px;">
+                        <h3 class="mb-30">Randevularım</h3>
+                        @if (Model.Count==0)
+                        {
+                            <p>Randevu Bulunamadı</p>
+                        }
+
+                        <div class="progress-table-wrap">
+                            <div class="progress-table">
+                                <div class="table-head">
+                                    <div class="serial">No</div>
+                                    <div class="serial">Tarih</div>
+                                    <div class="serial">saat</div>
+                                    <div class="serial">Sergi</div>
+                                    <div class="serial">Durum</div>
+                                </div>
+                                @foreach (Randevu item imo)
+                                {
+                                    <div class="table-row">
+                                        <div class="serial">@item.randevuID</div>
+                                        <div class="serial">@item.tarih</div>
+                                        <div class="serial">@item.saat</div>
+                                        <div class="serial">sergi Adı</div><div class="country"> <img src="/Content/Home/img/f4.jpg" alt="flag">Onaylı</div>
+                                    </div>
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

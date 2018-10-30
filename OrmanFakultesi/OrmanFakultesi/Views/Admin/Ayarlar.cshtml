@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Ayarlar";
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+@using OrmanFakultesi.Models
+@model Ayarlar
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Ayarlar
+            </header>
+            <div class="panel-body">
+                <form role="form" method="post" action="/Admin/ayarDuzenle">
+                    <div class="form-group">
+                        <label>Saatlik randevu kişi sayısı</label>
+                        <input name="MaxsaatlikRandevuKisiSayisi" type="text" class="form-control" value="@Model.MaxsaatlikRandevuKisiSayisi">
+                        <p>(Aynı saat içerisinde alanınan randevularda gelecek kişi sayısı sınırlar.)</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Randevu sistemini kapat</label>
+                        <input name="MaxsaatlikRandevuKisiSayisi" type="text" class="form-control" value="1">
+                        <p>(1:Sistem Açık , 0:Sistem kapalı)</p>
+                    </div>
+                    @Html.Hidden("ayarID", Model.ayarID)
+                    <button type="submit" class="btn btn-info">Kaydet</button>
+                </form>
+
+            </div>
+        </section>
+    </div>
+
+</div>
